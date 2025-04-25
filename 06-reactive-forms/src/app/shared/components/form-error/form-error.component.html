@@ -1,0 +1,11 @@
+@if(formUtils.isValidField(myForm(), campo())){
+<span class="form-text text-danger">
+  <!-- Debe de ser de 3 letras -->
+
+
+  {{formUtils.getFieldErrors(myForm(), campo())}}
+
+
+
+</span>
+}

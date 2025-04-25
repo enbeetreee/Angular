@@ -1,0 +1,8 @@
+<h1>Home page</h1>
+<hr>
+<h2>Tradicional {{traditionalProperty}}</h2>
+<h2>Signal {{signalProperty()}}</h2>
+<button (click)="changeTraditional()">Cambiar Tradicional</button><!-- doCheck, afterContentChecked, afterViewChecked, afterRender -->
+<button (click)="changeSignal()">Cambiar Signal</button><!-- doCheck, afterContentChecked, afterViewChecked, afterRender -->
+
+<app-title [title]="traditionalProperty"/>

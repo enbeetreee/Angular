@@ -1,0 +1,41 @@
+<section class="mx-20 mt-2 mb-10 flex flex-col place-items-center">
+  <div><h1 class="mt-5 text-5xl">{{country().name}}</h1>
+    <h2 class="text-1xl font-thin">Población: {{country().population | number}}</h2>
+  </div>
+
+  <section class="flex flex-col justify-items place-items-center">
+
+
+
+    <div class="stats shadow ">
+      <div class="stat place-items-center">
+        <div class="stat-title">Región</div>
+        <div class="stat-value">{{country().region}}</div>
+
+      </div>
+
+      <div class="stat place-items-center">
+        <div class="stat-title">Capital</div>
+        <div class="stat-value text-secondary">{{country().capital}}</div>
+
+      </div>
+
+      <div class="stat place-items-center">
+        <div class="stat-title">Escudo</div>
+        <div class="stat-value"> <img class=" rounded-xl max-h-15" [src]="country().coatOfArms" [alt]="country().name">
+        </div>
+      </div>
+    </div>
+    <figure class="diff max-w-150
+   aspect-16/9 rounded-xl " tabindex="0">
+      <div class="diff-item-1 " role="img" tabindex="0">
+        <img class="blur opacity-60 brightness-40" [src]="country().flagSvg" [alt]="country().name" />
+      </div>
+      <div class="diff-item-2 " role="img">
+        <img [src]="country().flagSvg" [alt]="country().name" />
+      </div>
+      <div class="diff-resizer"></div>
+    </figure>
+  </section>
+
+</section>

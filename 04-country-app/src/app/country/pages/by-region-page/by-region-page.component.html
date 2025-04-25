@@ -1,0 +1,23 @@
+<nav class="p-4 w-full">
+  <ul class="menu bg-base-200 sm:menu-horizontal rounded-box w-full flex justify-around">
+    @for(region of regions; track region){
+    <li>
+      <a [routerLink]="region" routerLinkActive="btn btn-accent" (click)="query.set(region)">
+        {{region}}
+      </a>
+    </li>
+    }
+
+  </ul>
+</nav>
+
+<!-- <country-search-input searchParameter="región" (searchValue)="query.set($event)"/> -->
+
+@if(countryResource.error()){
+  <h3 class="mt-4">{{countryResource.error()}}</h3>
+}@if(countryResource.hasValue()) {
+  <country-list [listCountries] = "countryResource.value()!"
+  [errorMessage]="countryResource.error()"
+  [isEmpty]="countryResource.value().length ==0||countryResource.value()==null"
+  [isLoading]="countryResource.isLoading()"/>
+}

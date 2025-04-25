@@ -1,0 +1,11 @@
+<country-search-input searchParameter="capital" (searchValue)="query.set($event)"
+[initialValue]="query()"/>
+
+
+
+@if(countryResource.error()){
+  <h3 class="mt-4">{{countryResource.error()}}</h3>
+}@if(countryResource.hasValue()) {
+  <country-list [listCountries] = "countryResource.value()!"
+  />
+}

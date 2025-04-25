@@ -1,0 +1,15 @@
+<!-- () -> emite evento / [] -> asigna valor -->
+
+<h1>Dragonball Page</h1>
+<br>
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <dragonball-character-add (newCharacter)="dragonballService.addCharacter($event)"/>
+
+ <!--  -->
+  </div>
+  <div class="col-12 col-sm-6">
+    <dragonball-character-list listName="Listado de personajes" [characters]="dragonballService.characters()" />
+
+  </div>
+</section>
